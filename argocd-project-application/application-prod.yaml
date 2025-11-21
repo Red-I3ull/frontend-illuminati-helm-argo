@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: illuminati-frontend-prod
+  namespace: argocd
+
+spec:
+  destination:
+    namespace: app-namespace
+    server: https://kubernetes.default.svc
+
+  source:
+    path: frontend
+    repoURL: https://github.com/Red-I3ull/frontend-illuminati-helm-argo.git
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values-prod.yaml
+
+  project: illuminati-project
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
