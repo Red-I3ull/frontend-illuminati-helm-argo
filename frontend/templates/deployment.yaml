@@ -21,7 +21,7 @@ spec:
       annotations:
         consul.hashicorp.com/connect-inject: "true"
     spec:
-      serviceAccountName: illuminati-frontend-dev
+      serviceAccountName: frontend
       containers:
         - name: frontend
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"

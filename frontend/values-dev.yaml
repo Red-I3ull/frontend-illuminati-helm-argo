@@ -8,7 +8,7 @@ image:
 
 podAnnotations: {}
 
-host: "stage.buymeadoor.pp.ua"
+host: "dev.buymeadoor.pp.ua"
 
 service:
   name: frontend
