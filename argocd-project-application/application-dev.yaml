@@ -12,7 +12,7 @@ spec:
   source:
     path: frontend
     repoURL: https://github.com/Red-I3ull/frontend-illuminati-helm-argo.git
-    targetRevision: BULL-56-Create-repo-for-frontend-and-application-for-argocd-and-deploy-front
+    targetRevision: HEAD
     helm:
       valueFiles:
         - values-dev.yaml
