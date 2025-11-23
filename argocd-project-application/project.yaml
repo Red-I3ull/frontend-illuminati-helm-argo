@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: illuminati-project
+  namespace: argocd
+spec:
+  description: Illuminati project for deploying application frontend and backend
+  sourceRepos:
+  - 'https://github.com/Red-I3ull/backend-illuminati-helm-argo.git'
+  - 'https://github.com/Red-I3ull/frontend-illuminati-helm-argo.git'
+  destinations:
+  - namespace: app-namespace
+    server: https://kubernetes.default.svc

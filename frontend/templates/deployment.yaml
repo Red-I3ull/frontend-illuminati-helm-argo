@@ -18,7 +18,10 @@ spec:
         app: frontend
         release: {{ .Release.Name }}
         version: {{ .Chart.AppVersion }}
+      annotations:
+        consul.hashicorp.com/connect-inject: "true"
     spec:
+      serviceAccountName: frontend
       containers:
         - name: frontend
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
