@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: "221416552528.dkr.ecr.us-east-1.amazonaws.com/illuminati-react-frontend"
   pullPolicy: Always
-  tag: "v-2"
+  tag: "v-3"
 
 
 podAnnotations: {}
