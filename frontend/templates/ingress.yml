@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: frontend
+  namespace: consul
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
@@ -19,6 +20,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: {{ .Values.service.name }}
+                name: consul-ingress-gateway
                 port:
                   number: {{ .Values.service.port }}
